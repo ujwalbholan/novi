@@ -1,4 +1,4 @@
-export default function CTASection() {
+export function CTASection() {
   return (
     <section className="cta-strip">
       <div className="wrap">
