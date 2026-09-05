@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+@import "@fullcalendar/core/skeleton.css";
+@import "@fullcalendar/theme-monarch/theme.css";
+
+.calendar-shell {
+  min-height: 650px;
+  overflow: hidden;
+}
+
+/*
+Monarch (v7) resolves all its colors via --fc-monarch-* tokens, which normally
+ship in theme-monarch/palettes/*.css. Map them to Novi's palette instead.
+*/
+.calendar-shell {
+  /* primary */
+  --fc-monarch-primary: var(--moss);
+  --fc-monarch-primary-foreground: #ffffff;
+  --fc-monarch-primary-over: color-mix(in oklab, var(--fc-monarch-primary) 90%, white);
+  --fc-monarch-primary-down: color-mix(in oklab, var(--fc-monarch-primary) 80%, white);
+
+  /* secondary */
+  --fc-monarch-secondary: var(--moss-tint);
+  --fc-monarch-secondary-foreground: var(--moss-deep);
+  --fc-monarch-secondary-over: color-mix(in oklab, var(--fc-monarch-secondary) 95%, var(--fc-monarch-foreground));
+  --fc-monarch-secondary-down: color-mix(in oklab, var(--fc-monarch-secondary) 90%, var(--fc-monarch-foreground));
+
+  /* tertiary */
+  --fc-monarch-tertiary: var(--gold);
+  --fc-monarch-tertiary-foreground: #ffffff;
+  --fc-monarch-tertiary-over: color-mix(in oklab, var(--fc-monarch-tertiary) 90%, white);
+  --fc-monarch-tertiary-down: color-mix(in oklab, var(--fc-monarch-tertiary) 80%, white);
+
+  /* calendar content */
+  --fc-monarch-event: var(--moss);
+  --fc-monarch-event-contrast: #ffffff;
+  --fc-monarch-highlight: color-mix(in oklab, var(--fc-monarch-secondary) 30%, transparent);
+  --fc-monarch-now: var(--gold);
+
+  /* controls */
+  --fc-monarch-selected: var(--moss);
+  --fc-monarch-selected-foreground: #ffffff;
+  --fc-monarch-selected-over: color-mix(in oklab, var(--fc-monarch-selected) 90%, white);
+  --fc-monarch-selected-down: color-mix(in oklab, var(--fc-monarch-selected) 80%, white);
+  --fc-monarch-outline: var(--gold);
+
+  /* neutral */
+  --fc-monarch-popover: var(--fc-monarch-background);
+  --fc-monarch-background: var(--card);
+  --fc-monarch-faint: rgba(46, 74, 59, 0.06);
+  --fc-monarch-muted: rgba(46, 74, 59, 0.1);
+  --fc-monarch-strong: rgba(46, 74, 59, 0.18);
+  --fc-monarch-stronger: rgba(46, 74, 59, 0.24);
+  --fc-monarch-strongest: rgba(46, 74, 59, 0.3);
+
+  /* foregrounds */
+  --fc-monarch-foreground: var(--ink);
+  --fc-monarch-faint-foreground: #c3c9c0;
+  --fc-monarch-muted-foreground: var(--ink-soft);
+
+  /* borders */
+  --fc-monarch-border: var(--line);
+  --fc-monarch-strong-border: var(--moss-deep);
+}
+
+.calendar-shell .calendar-toolbar {
+  margin-bottom: 18px;
+}
+
+.calendar-shell .calendar-toolbar-title {
+  color: var(--ink);
+  font-family: Fraunces, serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+/* Day-of-week header */
+.calendar-shell [role="columnheader"] {
+  background: var(--bg);
+  color: var(--ink-soft);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Day cells */
+.calendar-shell [role="gridcell"] {
+  min-height: 76px;
+  transition: background-color 150ms ease;
+}
+
+.calendar-shell [role="gridcell"]:hover {
+  background: var(--bg);
+}
+
+.calendar-shell [role="gridcell"][aria-current="date"] {
+  background: var(--moss-tint);
+}
+
+/* Day number */
+.calendar-shell .day-grid-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  box-sizing: border-box;
+  margin: 6px 4px 2px;
+  border-radius: 999px;
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Outside current month */
+.calendar-shell .day-grid-number.is-other-day {
+  color: var(--line);
+}
+
+/* Today */
+.calendar-shell .day-grid-number.today-circle {
+  background: var(--gold);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(201, 138, 46, 0.35);
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .calendar-shell {
+    min-height: 570px;
+    padding: 12px;
+  }
+
+  .calendar-shell [role="gridcell"] {
+    min-height: 62px;
+  }
+
+  .calendar-shell .calendar-toolbar {
+    margin-bottom: 14px;
+  }
+
+  .calendar-shell .calendar-toolbar-title {
+    font-size: 1rem;
+  }
+
+  .calendar-shell [role="columnheader"] {
+    font-size: 0.6rem;
+  }
+
+  .calendar-shell .day-grid-number {
+    width: 25px;
+    height: 25px;
+    margin: 3px;
+    font-size: 0.7rem;
+  }
+}
