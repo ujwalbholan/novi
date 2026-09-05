@@ -3,7 +3,7 @@ export function CTASection() {
     <section className="cta-strip">
       <div className="wrap">
         <h2>Give your team back its focus this week.</h2>
-        <a href="#signup" className="btn btn-primary">
+        <a href="#footer" className="btn btn-primary">
           Start free
         </a>
       </div>
