@@ -22,9 +22,14 @@ export function Footer() {
       <div className="wrap">
         <div className="footer-intro">
           <div className="footer-brand-block">
-            <a href="#top" className="logo">
-              <span className="logo-mark" aria-hidden="true" />
-              Novi
+            <a
+              href="#top"
+              className="flex items-center gap-2 font-semibold tracking-tight text-[#213328]"
+            >
+              <span className="grid size-8 place-items-center rounded-lg bg-[#2e4a3b] font-serif text-lg italic text-[#e9c98a]">
+                n
+              </span>
+              <span className="hidden lg:inline">Novi</span>
             </a>
             <p>The calm workspace for small, fast moving teams.</p>
             <div className="footer-socials">

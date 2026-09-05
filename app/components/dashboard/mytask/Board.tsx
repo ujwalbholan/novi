@@ -434,7 +434,7 @@ export default function BoardDemo() {
             <CheckCircle2 size={15} />
           </span>
           <span className="board-insight-value">{completionRate}%</span>
-          <span className="board-insight-label">project complete</span>
+          <span className="board-insight-label">Task complete</span>
         </motion.div>
         <motion.div
           className="board-insight board-insight-tip"

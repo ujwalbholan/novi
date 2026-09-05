@@ -93,7 +93,8 @@ function Head() {
 export function Header() {
   return (
     <div className="grid grid-cols-6">
-      <Logo /> <Head />
+      <Logo />
+      <Head />
     </div>
   );
 }

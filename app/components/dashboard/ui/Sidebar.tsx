@@ -18,7 +18,7 @@ export function Sidebar({
   onChannelChange,
 }: SidebarProps) {
   return (
-    <aside className="col-span-1 rounded-bl-xl flex min-h-[600px] w-full flex-col border-r border-[#d9e0d6] bg-[#eef3ec] px-3 py-4 text-[#536154] ov">
+    <aside className="col-span-1 rounded-bl-xl flex min-h-183 w-full flex-col border-r border-[#d9e0d6] bg-[#eef3ec] px-3 py-4 text-[#536154] ov">
       <nav aria-label="Dashboard navigation" className="space-y-1">
         <p className="px-3 pb-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#93a092]">
           Workspace
@@ -51,7 +51,7 @@ export function Sidebar({
                     initial="hidden"
                     animate="visible"
                     variants={{ visible: { transition: { staggerChildren: 0.055 } } }}
-                    className="space-y-1 py-1"
+                    className="sidebar-submenu-list space-y-1 py-1"
                   >
                     {children.map((child) => (
                       <motion.button
