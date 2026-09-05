@@ -45,7 +45,7 @@ export function Sidebar({
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.22, ease: "easeOut" }}
-                  className="ml-5 mt-1 overflow-hidden border-l border-[#cbdacb] pl-2"
+                  className="ml-2 mt-1 overflow-hidden border-l border-[#cbdacb] pl-2"
                 >
                   <motion.div
                     initial="hidden"

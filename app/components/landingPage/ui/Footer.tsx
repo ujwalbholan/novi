@@ -100,7 +100,11 @@ export function Footer() {
             </p>
           </div>
         </div>
-        <div className="footer-wordmark" aria-hidden="true">
+        <div
+          className=" text-center text-[100px] bg-clip-text text-transparent  bg-linear-to-r from-green-900 to bg-gray-300 
+          tracking-wide font-serif font-semibold border-t border-[#d9e0d6] py-5 text-b text-shadow-xs"
+          aria-hidden="true"
+        >
           Novi
         </div>
         <div className="footer-bottom-bar">
