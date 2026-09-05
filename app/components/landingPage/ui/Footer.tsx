@@ -1,84 +1,112 @@
 "use client";
 
+import { ArrowUpRight, Mail } from "lucide-react";
 import { FormEvent, useState } from "react";
 
+const linkColumns = [
+  { title: "Product", links: ["Features", "Pricing", "Integrations"] },
+  { title: "Company", links: ["About Novi", "Journal", "Contact"] },
+  { title: "Resources", links: ["Help center", "Community", "Changelog"] },
+];
+
 export function Footer() {
-  const [message, setMessage] = useState("");
-  const submit = (event: FormEvent<HTMLFormElement>) => {
+  const [submitted, setSubmitted] = useState(false);
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setMessage("You're on the list - thanks for signing up.");
+    setSubmitted(true);
     event.currentTarget.reset();
   };
+
   return (
-    <footer id="signup">
+    <footer id="footer" className="site-footer">
       <div className="wrap">
-        <div className="footer-top">
-          <div className="footer-brand">
+        <div className="footer-intro">
+          <div className="footer-brand-block">
             <a href="#top" className="logo">
               <span className="logo-mark" aria-hidden="true" />
               Novi
             </a>
             <p>The calm workspace for small, fast moving teams.</p>
-            <div className="social-row">
-              <a href="#x" aria-label="Novi on X">
-                𝕏
+            <div className="footer-socials">
+              <a href="#twitter" aria-label="Novi on Twitter">
+                X
               </a>
               <a href="#linkedin" aria-label="Novi on LinkedIn">
                 in
               </a>
               <a href="#github" aria-label="Novi on GitHub">
-                ◉
+                GH
               </a>
             </div>
           </div>
-          <FooterColumn
-            title="Product"
-            links={["Boards", "Threads", "Timeline", "Integrations"]}
-          />
-          <FooterColumn title="Company" links={["About", "Careers", "Blog"]} />
-          <div className="footer-col newsletter">
-            <h5>Get product updates</h5>
-            <p>One short email a month. New features, no noise.</p>
-            <form className="signup-form" onSubmit={submit}>
-              <label htmlFor="emailInput">Email address</label>
+          <div className="footer-newsletter">
+            <div>
+              <span className="footer-kicker">The Novi note</span>
+              <h2>
+                A little signal.
+                <br />
+                <em>No noise.</em>
+              </h2>
+            </div>
+            <form onSubmit={handleSubmit} className="footer-signup">
+              <label htmlFor="footer-email">Email address</label>
               <input
-                id="emailInput"
+                id="footer-email"
                 type="email"
-                placeholder="you@company.com"
                 required
+                placeholder="you@company.com"
               />
-              <button type="submit" className="btn btn-primary btn-small">
-                Subscribe
+              <button type="submit" aria-label="Subscribe">
+                <ArrowUpRight size={17} />
               </button>
             </form>
-            <p className="signup-msg" role="status">
-              {message}
+            <p className="footer-signup-status" role="status">
+              {submitted
+                ? "You are on the list. See you in your inbox."
+                : "One short email a month. New features, useful ideas."}
             </p>
           </div>
         </div>
-        <div className="footer-bottom">
-          <span>© 2026 Novi. All rights reserved.</span>
-          <div className="legal-links">
+        <div className="footer-links-grid">
+          {linkColumns.map((column) => (
+            <div className="footer-link-column" key={column.title}>
+              <h3>{column.title}</h3>
+              {column.links.map((link) => (
+                <a
+                  href={`#${link.toLowerCase().replaceAll(" ", "-")}`}
+                  key={link}
+                >
+                  {link}
+                  <ArrowUpRight size={12} />
+                </a>
+              ))}
+            </div>
+          ))}
+          <div className="footer-link-column footer-contact">
+            <h3>Say hello</h3>
+            <a href="mailto:hello@novi.team">
+              hello@novi.team
+              <Mail size={12} />
+            </a>
+            <p>
+              Made with care for teams
+              <br />
+              who move with intention.
+            </p>
+          </div>
+        </div>
+        <div className="footer-wordmark" aria-hidden="true">
+          Novi
+        </div>
+        <div className="footer-bottom-bar">
+          <span>© 2026 Novi Studio</span>
+          <span>Good work, together.</span>
+          <div>
             <a href="#privacy">Privacy</a>
             <a href="#terms">Terms</a>
           </div>
         </div>
       </div>
     </footer>
-  );
-}
-
-function FooterColumn({ title, links }: { title: string; links: string[] }) {
-  return (
-    <div className="footer-col">
-      <h5>{title}</h5>
-      <ul>
-        {links.map((link) => (
-          <li key={link}>
-            <a href={`#${link.toLowerCase()}`}>{link}</a>
-          </li>
-        ))}
-      </ul>
-    </div>
   );
 }

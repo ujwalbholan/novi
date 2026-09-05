@@ -1,5 +1,5 @@
 import { Overview } from "../overview/Overview";
-import BoardDemo from "../mytask/BoardDemo";
+import BoardDemo from "../mytask/Board";
 import { Inbox } from "../inbox/Inbox";
 import { Calander } from "../calander/Calander";
 

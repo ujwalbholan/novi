@@ -1,4 +1,4 @@
-import { DashboardDemo } from "../../DashboardDemo";
+import { DashboardDemo } from "../../Dashboard";
 
 export function HeroSection() {
   return (
@@ -15,7 +15,7 @@ export function HeroSection() {
           Novi brings tasks, docs, and conversations into one calm workspace built for small, fast moving teams.
         </p>
         <div className="hero-actions reveal" style={{ animationDelay: "320ms" }}>
-          <a href="#signup" className="btn btn-primary">Start free</a>
+          <a href="#footer" className="btn btn-primary">Start free</a>
           <a href="#features" className="btn btn-secondary">See how it works</a>
         </div>
         <p className="hero-note reveal" style={{ animationDelay: "380ms" }}>
