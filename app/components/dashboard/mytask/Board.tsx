@@ -20,31 +20,12 @@ import {
 } from "lucide-react";
 import { motion } from "motion/react";
 import { FormEvent, useState } from "react";
+import { initialColumns } from "../constant";
 
-type ColumnId = string;
-type Card = { id: string; title: string; tag: string; gold?: boolean };
-type Column = { id: ColumnId; title: string; cards: Card[] };
+export type ColumnId = string;
+export type Card = { id: string; title: string; tag: string; gold?: boolean };
+export type Column = { id: ColumnId; title: string; cards: Card[] };
 
-const initialColumns: Column[] = [
-  {
-    id: "todo",
-    title: "To do",
-    cards: [
-      { id: "pricing", title: "Draft the pricing page", tag: "Design" },
-      { id: "safari", title: "Fix Safari scroll jump", tag: "Bug", gold: true },
-    ],
-  },
-  {
-    id: "progress",
-    title: "In progress",
-    cards: [{ id: "emails", title: "Rewrite onboarding emails", tag: "Copy" }],
-  },
-  {
-    id: "done",
-    title: "Done",
-    cards: [{ id: "logo", title: "Logo mark exploration", tag: "Design" }],
-  },
-];
 
 function CardItem({
   card,
