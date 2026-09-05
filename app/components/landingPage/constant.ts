@@ -13,7 +13,6 @@ export const features = [
     icon: KanbanSquare,
     tone: "moss" as const,
     size: "wide" as const,
-    
   },
   {
     eyebrow: "Make decisions stick",
@@ -39,4 +38,10 @@ export const features = [
     tone: "cream" as const,
     size: "wide" as const,
   },
+];
+
+export const linkColumns = [
+  { title: "Product", links: ["Features", "Pricing", "Integrations"] },
+  { title: "Company", links: ["About Novi", "Journal", "Contact"] },
+  { title: "Resources", links: ["Help center", "Community", "Changelog"] },
 ];

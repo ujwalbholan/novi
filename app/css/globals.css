@@ -1281,19 +1281,7 @@ input {
 .footer-bottom-bar a:hover {
   color: var(--ink);
 }
-.footer-wordmark {
-  overflow: hidden;
-  padding: 24px 0 18px;
-  border-top: 1px solid #d9d9d0;
-  color: rgba(46, 74, 59, 0.09);
-  font-family: Fraunces, serif;
-  font-size: clamp(7rem, 22vw, 19rem);
-  font-weight: 600;
-  letter-spacing: -0.09em;
-  line-height: 0.62;
-  text-align: center;
-  user-select: none;
-}
+
 
 @media (max-width: 860px) {
   .nav-links,
