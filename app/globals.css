@@ -2,6 +2,7 @@
 @import "tailwindcss";
 @import "@fullcalendar/core/skeleton.css";
 @import "@fullcalendar/theme-monarch/theme.css";
+
 .calendar-shell {
   min-height: 650px;
   overflow: hidden;
@@ -85,6 +86,21 @@
   --card: #fff;
   --maxw: 1180px;
 }
+
+@theme {
+  --color-bg: var(--bg);
+  --color-bg-deep: var(--bg-deep);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-moss: var(--moss);
+  --color-moss-deep: var(--moss-deep);
+  --color-moss-tint: var(--moss-tint);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-line: var(--line);
+  --color-card: var(--card);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -319,13 +335,7 @@ input {
   color: var(--moss);
   font-weight: 400;
 }
-.hero-sub {
-  max-width: 610px;
-  margin-top: 22px;
-  color: var(--ink-soft);
-  font-size: clamp(1rem, 1.2vw, 1.15rem);
-  line-height: 1.65;
-}
+
 .hero-actions {
   display: flex;
   align-items: center;
@@ -836,10 +846,6 @@ input {
   .footer-contact {
     padding-left: 0;
     border-left: 0;
-  }
-  .footer-wordmark {
-    padding: 20px 0 16px;
-    font-size: clamp(6rem, 28vw, 10rem);
   }
   .footer-bottom-bar {
     display: grid;
@@ -1391,9 +1397,16 @@ input {
   scrollbar-color: #b9cbb9 transparent;
   scrollbar-width: thin;
 }
-.sidebar-submenu-list::-webkit-scrollbar { width: 5px; }
-.sidebar-submenu-list::-webkit-scrollbar-track { background: transparent; }
-.sidebar-submenu-list::-webkit-scrollbar-thumb { border-radius: 999px; background: #b9cbb9; }
+.sidebar-submenu-list::-webkit-scrollbar {
+  width: 5px;
+}
+.sidebar-submenu-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.sidebar-submenu-list::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: #b9cbb9;
+}
 .footer-intro {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;

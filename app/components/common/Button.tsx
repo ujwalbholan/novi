@@ -1,5 +1,5 @@
+import { cn } from "@/app/util/utils";
 import { forwardRef, ReactNode, type ButtonHTMLAttributes } from "react";
-import { cn } from "../util/utils";
 
 type ButtonVariant = "primary" | "secondary" | "outline" | "ghost" | "danger";
 type ButtonSize = "sm" | "md" | "lg";
@@ -14,12 +14,13 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 const variants: Record<ButtonVariant, string> = {
-  primary: "bg-white text-black hover:bg-zinc-200 active:bg-zinc-300",
+  primary:
+    "bg-moss text-white font-bold border border-gray-300 shadow cursor-pointer transition-transform duration-150 hover:-translate-y-1 active:translate-y-0.5",
 
   secondary: "bg-zinc-900 text-white ring-1 ring-zinc-800 hover:bg-zinc-800",
 
   outline:
-    "bg-transparent text-zinc-200 ring-1 ring-zinc-800 hover:bg-zinc-900 hover:ring-zinc-700",
+    "bg-transparent font-bold text-ink ring-1 ring-line hover:ring-1 hover:ring-ink shadow cursor-pointer transition-transform duration-150 hover:-translate-y-1 active:translate-y-0.5",
 
   ghost: "bg-transparent text-zinc-400 hover:bg-zinc-900 hover:text-white",
 
@@ -30,7 +31,7 @@ const variants: Record<ButtonVariant, string> = {
 const sizes: Record<ButtonSize, string> = {
   sm: "h-8 rounded-md px-3 text-xs",
   md: "h-10 rounded-lg px-4 text-sm",
-  lg: "h-12 rounded-xl px-5 text-sm",
+  lg: "h-12 rounded-lg py-3 px-8 text-sm",
 };
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(

@@ -60,7 +60,7 @@ const plans = [
   },
 ];
 
-export default function PriceSection() {
+export function PriceSection() {
   const [billing, setBilling] = useState<Billing>("yearly");
 
   return (
