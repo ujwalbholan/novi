@@ -156,7 +156,7 @@ export function Inbox({ activeChannel }: InboxProps) {
   };
 
   return (
-    <div className="flex h-[600px] min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
+    <div className="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
       <header className="flex flex-wrap items-center gap-3 border border-[#e5ebe3] rounded-xl px-4 py-3 sm:px-5">
         <div className="flex min-w-0 flex-1 items-center gap-2">
           <Hash size={18} className="text-[#819082]" />
@@ -201,7 +201,7 @@ export function Inbox({ activeChannel }: InboxProps) {
 
       <div className="flex min-h-0 flex-1 ">
         <div className="flex min-w-0 flex-1 flex-col">
-          <div className="h-[430px] shrink-0 space-y-1 overflow-y-auto p-4 sm:p-5">
+          <div className="h-128 shrink-0 space-y-1 overflow-y-auto p-4 sm:p-5">
             {messages.length ? (
               messages.map((message, index) => (
                 <motion.article
@@ -317,9 +317,9 @@ export function Inbox({ activeChannel }: InboxProps) {
               initial={{ width: 0, opacity: 0 }}
               animate={{ width: 280, opacity: 1 }}
               exit={{ width: 0, opacity: 0 }}
-              className="hidden shrink-0 overflow-hidden border-l border-[#e5ebe3] bg-[#fbfcfa] lg:block"
+              className="hidden shrink-0 overflow-hidden  bg-[#fbfcfa] lg:block"
             >
-              <div className="flex min-w-[280px] items-center justify-between border-b border-[#e5ebe3] px-4 py-3">
+              <div className="flex min-w-70 items-center justify-between border-b border-[#e5ebe3] px-4 py-3">
                 <div>
                   <p className="text-xs font-semibold text-[#304638]">Thread</p>
                   <p className="text-[10px] text-[#93a092]">
@@ -335,7 +335,7 @@ export function Inbox({ activeChannel }: InboxProps) {
                   <X size={16} />
                 </button>
               </div>
-              <div className="min-w-[280px] p-4">
+              <div className="min-w-70 p-4">
                 <div className="rounded-lg bg-[#eef3ec] p-3">
                   <p className="text-[11px] leading-5 text-[#536154]">
                     {threadMessage.text}
@@ -344,7 +344,7 @@ export function Inbox({ activeChannel }: InboxProps) {
                 <p className="mt-5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#a0aca1]">
                   2 replies
                 </p>
-                <div className="mt-4 space-y-4">
+                <div className="mt-4 space-y-4 h-80">
                   <div className="flex gap-2">
                     <span className="grid size-6 place-items-center rounded-full bg-[#91bca4] text-[8px] font-bold text-white">
                       ML
@@ -369,12 +369,12 @@ export function Inbox({ activeChannel }: InboxProps) {
               </div>
               <form
                 onSubmit={sendThreadReply}
-                className="mt-auto flex min-w-[280px] gap-2 border-t border-[#e5ebe3] p-3"
+                className="mt-auto flex justify-center items-center min-w-70 gap-2 p-3"
               >
                 <input
                   value={threadDraft}
                   onChange={(event) => setThreadDraft(event.target.value)}
-                  className="min-w-0 flex-1 rounded-md border border-[#d9e0d6] bg-white px-2 py-2 text-[11px] outline-none focus:border-[#8fa996]"
+                  className="min-w-0 flex-1 rounded-md border border-[#d9e0d6] bg-white px-2 py-2 text-[11px] "
                   placeholder="Reply..."
                 />
                 <button
