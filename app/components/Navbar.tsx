@@ -1,9 +1,49 @@
 "use client";
 
-import { useState } from "react";
-
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
-  const close = () => setOpen(false);
-  return <header className="nav"><div className="wrap nav-row"><a href="#top" className="logo"><span className="logo-mark" aria-hidden="true" />Novi</a><nav className="nav-links" aria-label="Primary"><a href="#product">Product</a><a href="#features">Features</a><a href="#company">Company</a></nav><div className="nav-actions"><a href="#login" className="btn btn-secondary btn-small">Log in</a><a href="#signup" className="btn btn-primary btn-small">Start free</a><button className={`menu-toggle ${open ? "open" : ""}`} type="button" onClick={() => setOpen((value) => !value)} aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="mobile-panel"><span /></button></div></div><div className={`mobile-panel ${open ? "open" : ""}`} id="mobile-panel"><a href="#product" onClick={close}>Product</a><a href="#features" onClick={close}>Features</a><a href="#company" onClick={close}>Company</a><a href="#login" onClick={close}>Log in</a><a href="#signup" className="btn btn-primary" onClick={close}>Start free</a></div></header>;
+  // const [open, setOpen] = useState(false);
+  // const close = () => setOpen(false);
+  return (
+    <nav className="relative z-20 mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 md:px-8">
+      <div className="flex items-center gap-2">
+        <a
+          href="#top"
+          className="flex items-center gap-2 font-semibold tracking-tight text-[#213328]"
+        >
+          <span className="grid size-8 place-items-center rounded-lg bg-[#2e4a3b] font-serif text-lg italic text-[#e9c98a]">
+            n
+          </span>
+          <span className="hidden lg:inline">Novi</span>
+        </a>
+      </div>
+      <div className="hidden items-center gap-8 text-sm font-normal text-green/90 md:flex">
+        <a href="#" className="transition hover:text-white">
+          Features
+        </a>
+        <a href="#" className="transition hover:text-white">
+          Pricing
+        </a>
+        <a href="#" className="transition hover:text-white">
+          Docs
+        </a>
+        <a href="#" className="transition hover:text-white">
+          Blog
+        </a>
+      </div>
+      <div className="flex items-center gap-3">
+        <a
+          href="#"
+          className="hidden text-sm font-medium text-white/90 transition hover:text-white sm:block"
+        >
+          Sign in
+        </a>
+        <a
+          href="#"
+          className="rounded-full bg-white px-4 py-1.5 text-sm font-semibold text-sky-700 shadow-md transition hover:bg-white/90"
+        >
+          Get started
+        </a>
+      </div>
+    </nav>
+  );
 }

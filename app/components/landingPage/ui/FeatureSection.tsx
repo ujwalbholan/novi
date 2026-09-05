@@ -21,7 +21,7 @@ const features = [
   },
 ];
 
-export default function FeatureSection() {
+export function FeatureSection() {
   return (
     <section className="features" id="features">
       <div className="wrap">

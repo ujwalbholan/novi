@@ -1,9 +1,17 @@
-import CTASection from "./components/CTASection";
-import FeatureSection from "./components/FeatureSection";
-import Footer from "./components/Footer";
-import HeroSection from "./components/HeroSection";
+import { CTASection } from "./components/landingPage/ui/CTASection";
+import { FeatureSection } from "./components/landingPage/ui/FeatureSection";
+import { Footer } from "./components/landingPage/ui/Footer";
+import { HeroSection } from "./components/landingPage/ui/HeroSection";
 import Navbar from "./components/Navbar";
 
 export default function Home() {
-  return <main id="top"><Navbar /><HeroSection /><FeatureSection /><CTASection /><Footer /></main>;
+  return (
+    <main id="top">
+      <Navbar />
+      <HeroSection />
+      <FeatureSection />
+      <CTASection />
+      <Footer />
+    </main>
+  );
 }
