@@ -33,18 +33,21 @@ export function FeatureCard({
 }: FeatureCardProps) {
   return (
     <article
-      className={`group relative flex min-h-65 flex-col justify-between overflow-hidden rounded-[18px] border border-[#e7e5df] p-7 shadow-[0_8px_24px_rgba(28,32,25,0.045)] transition duration-300 hover:-translate-y-1.5
+      className={`group relative flex min-h-65 flex-col justify-between overflow-hidden rounded-[18px] border
+         border-[#e7e5df] p-7 shadow-[0_8px_24px_rgba(28,32,25,0.045)] transition duration-300 hover:-translate-y-1.5
          hover:border-[#d3d4cc] hover:shadow-[0_20px_40px_rgba(28,32,25,0.1)] md:min-h-82.5 ${toneClasses[tone]} ${sizeClasses[size]}`}
     >
       <div className="flex items-start justify-between gap-2">
         <span
-          className="grid size-11.5 place-items-center rounded-xl border border-current opacity-90 transition duration-300 group-hover:rotate-[-8deg] group-hover:scale-105 group-hover:bg-white/10"
+          className="grid size-11.5 place-items-center rounded-xl border border-current opacity-90 transition
+           duration-300 group-hover:rotate-[-8deg] group-hover:scale-105 group-hover:bg-white/10"
           aria-hidden="true"
         >
           <Icon size={21} strokeWidth={1.8} />
         </span>
         <span
-          className="grid size-7.5 place-items-center rounded-full border border-current opacity-60 transition duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100"
+          className="grid size-7.5 place-items-center rounded-full border border-current 
+          opacity-60 transition duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100"
           aria-hidden="true"
         >
           <ArrowUpRight size={16} />

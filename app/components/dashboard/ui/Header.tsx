@@ -12,15 +12,15 @@ function Logo() {
     <div className="col-span-1 rounded-tl-xl flex items-center justify-between border-b borde border-r border-[#d9e0d6] bg-[#eef3ec] px-4 py-3">
       <a
         href="#top"
-        className="flex items-center gap-2 font-semibold tracking-tight text-[#213328]"
+        className="flex items-center gap-2 font-semibold tracking-tight text-moss-deep"
       >
-        <span className="grid size-8 place-items-center rounded-lg bg-[#2e4a3b] font-serif text-lg italic text-[#e9c98a]">
+        <span className="grid size-8 place-items-center rounded-lg bg-moss font-serif text-lg italic text-gold-soft">
           n
         </span>
         <span className="hidden lg:inline">Novi</span>
       </a>
       <button
-        className="rounded-md p-1.5 text-[#819082] transition hover:bg-white hover:text-[#213328]"
+        className="rounded-md p-1.5 text-ink-soft/70 transition hover:bg-white hover:text-moss-deep"
         aria-label="Collapse sidebar"
         type="button"
       >
@@ -39,7 +39,7 @@ function Head() {
           <span>/</span>
           <span>Overview</span>
         </div>
-        <h2 className="mt-1 truncate font-serif text-lg font-medium tracking-tight text-[#213328] sm:text-xl">
+        <h2 className="mt-1 truncate font-serif text-lg font-medium tracking-tight text-moss-deep sm:text-xl">
           Good morning, Alex.
         </h2>
       </div>
@@ -51,7 +51,7 @@ function Head() {
             className="pointer-events-none absolute left-3 text-[#93a092]"
           />
           <input
-            className="h-9 w-full rounded-lg border border-[#d9e0d6] bg-white pl-9 pr-12 text-xs text-[#213328] outline-none placeholder:text-[#a2ada1] focus:border-[#8fa996] focus:ring-2 focus:ring-[#dce9dc]"
+            className="h-9 w-full rounded-lg border border-[#d9e0d6] bg-white pl-9 pr-12 text-xs text-moss-deep outline-none placeholder:text-[#a2ada1] focus:border-[#8fa996] focus:ring-2 focus:ring-[#dce9dc]"
             type="search"
             placeholder="Search anything"
             aria-label="Search anything"
@@ -61,29 +61,29 @@ function Head() {
           </span>
         </label>
         <button
-          className="grid size-9 place-items-center rounded-lg border border-[#d9e0d6] bg-white text-[#536154] transition hover:border-[#8fa996] hover:text-[#213328]"
+          className="grid size-9 place-items-center rounded-lg border border-[#d9e0d6] bg-white text-ink-soft transition hover:border-[#8fa996] hover:text-moss-deep"
           type="button"
           aria-label="Help"
         >
           <HelpCircle size={16} />
         </button>
         <button
-          className="relative grid size-9 place-items-center rounded-lg border border-[#d9e0d6] bg-white text-[#536154] transition hover:border-[#8fa996] hover:text-[#213328]"
+          className="relative grid size-9 place-items-center rounded-lg border border-[#d9e0d6] bg-white text-ink-soft transition hover:border-[#8fa996] hover:text-moss-deep"
           type="button"
           aria-label="Notifications"
         >
           <Bell size={16} />
-          <span className="absolute right-2 top-2 size-1.5 rounded-full bg-[#c98a2e]" />
+          <span className="absolute right-2 top-2 size-1.5 rounded-full bg-gold" />
         </button>
         <button
           className="hidden items-center gap-2 rounded-lg border border-[#d9e0d6] bg-white px-2 py-1.5 text-left transition hover:border-[#8fa996] sm:flex"
           type="button"
           aria-label="Open account menu"
         >
-          <span className="grid size-6 place-items-center rounded-md bg-[#c98a2e] text-[9px] font-bold text-white">
+          <span className="grid size-6 place-items-center rounded-md bg-gold text-[9px] font-bold text-white">
             AT
           </span>
-          <ChevronDown size={14} className="text-[#819082]" />
+          <ChevronDown size={14} className="text-ink-soft/70" />
         </button>
       </div>
     </div>

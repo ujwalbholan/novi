@@ -17,7 +17,7 @@ export function Note({ children, delay = 0.38 }: NoteProps) {
         delay,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className="py-4 text-center text-sm text-ink-soft"
+      className="py-6 text-center text-sm text-ink-soft"
     >
       {children}
     </motion.p>

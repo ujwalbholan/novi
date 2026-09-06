@@ -17,10 +17,10 @@ export function Tag({ title, dot = true, delay = 0.1 }: TagProps) {
         delay: delay,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className="inline-flex items-center gap-2 rounded-lg bg-moss-tint px-4 py-2 border border-gray-300 shadow"
+      className="inline-flex items-center gap-2 rounded-lg bg-moss-tint px-4 py-2 border border-line shadow-sm"
     >
       {dot && <span className="size-2 rounded-full bg-gold animate-pulse" />}
-      <span className="text-sm tracking-tight text-gray-600">{title}</span>
+      <span className="text-sm tracking-tight text-ink-soft">{title}</span>
     </motion.div>
   );
 }

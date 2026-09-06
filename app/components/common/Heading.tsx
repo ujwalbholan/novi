@@ -18,7 +18,7 @@ export function Heading({ title, delay = 0.1, className }: HeadingProps) {
         delay,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className={cn("max-w-200 py-5 text-center text-[80px]", className)}
+      className={cn("max-w-200 py-5 text-center text-4xl sm:text-5xl md:text-6xl lg:text-[80px]", className)}
     >
       {title}
     </motion.h1>

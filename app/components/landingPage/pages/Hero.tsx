@@ -13,7 +13,10 @@ export default function Hero() {
         title="Novi brings tasks, docs, and conversations into one calm workspace
           built for small, fast moving teams."
       />
-      <div className="hero-actions reveal" style={{ animationDelay: "320ms" }}>
+      <div
+        className="mt-8 flex flex-wrap items-center justify-center gap-3 opacity-0 translate-y-4 
+      animate-[reveal-up_0.7s_cubic-bezier(0.2,0.7,0.2,1)_forwards] [animation-delay:320ms]"
+      >
         <Button buttonName="Start free" size="lg" variant="primary" />
         <Button buttonName="See how it works" size="lg" variant="outline" />
       </div>

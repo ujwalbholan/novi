@@ -20,14 +20,14 @@ export function Workspace() {
           <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#93a092]">
             Your workspace
           </p>
-          <h3 className="mt-1 font-serif text-xl text-[#213328]">
+          <h3 className="mt-1 font-serif text-xl text-moss-deep">
             Project pulse
           </h3>
         </div>
         <button
           type="button"
           onClick={() => setShowAll((current) => !current)}
-          className="inline-flex items-center gap-1 text-xs font-semibold text-[#2e4a3b] hover:text-[#c98a2e]"
+          className="inline-flex items-center gap-1 text-xs font-semibold text-moss hover:text-gold"
         >
           {showAll ? "Show less" : "View all"}
           <ChevronRight size={14} />

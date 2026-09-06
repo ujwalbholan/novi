@@ -20,7 +20,7 @@ const variants: Record<ButtonVariant, string> = {
   secondary: "bg-zinc-900 text-white ring-1 ring-zinc-800 hover:bg-zinc-800",
 
   outline:
-    "bg-transparent font-bold text-ink ring-1 ring-line hover:ring-1 hover:ring-ink shadow cursor-pointer transition-transform duration-150 hover:-translate-y-1 active:translate-y-0.5",
+    "bg-transparent font-bold text-ink text-shadow cursor-pointer transition-transform duration-150 hover:-translate-y-1 active:translate-y-0.5",
 
   ghost: "bg-transparent text-zinc-400 hover:bg-zinc-900 hover:text-white",
 
