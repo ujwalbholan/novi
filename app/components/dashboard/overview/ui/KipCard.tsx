@@ -18,14 +18,14 @@ export function KipCard() {
         >
           <div className="flex items-start justify-between">
             <span
-              className={`grid size-9 place-items-center rounded-lg ${tone === "gold" ? "bg-[#f6ead1] text-[#c98a2e]" : tone === "sage" ? "bg-[#e3eee3] text-[#2e4a3b]" : "bg-[#f5e3dc] text-[#bd7258]"}`}
+              className={`grid size-9 place-items-center rounded-lg ${tone === "gold" ? "bg-[#f6ead1] text-gold" : tone === "sage" ? "bg-[#e3eee3] text-moss" : "bg-[#f5e3dc] text-[#bd7258]"}`}
             >
               <Icon size={17} />
             </span>
             <MoreHorizontal size={16} className="text-[#aab6aa]" />
           </div>
           <p className="mt-4 text-xs text-[#819082]">{label}</p>
-          <p className="mt-1 font-serif text-3xl text-[#213328]">{value}</p>
+          <p className="mt-1 font-serif text-3xl text-moss-deep">{value}</p>
           <p className="mt-1 text-[11px] font-medium text-[#6f9b79]">
             {detail}
           </p>

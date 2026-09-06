@@ -1,24 +1,23 @@
 "use client";
 
-import { Section } from "../../common/Section";
 import { FooterLinks } from "../pages/footer/FooterLinks";
 import { FooterBrandBlock } from "../pages/footer/FooterBrandBlock";
 import { FooterNote } from "../pages/footer/FooterNote";
 import { FooterBottom } from "../pages/footer/FooterBottom";
+import { Section } from "../../common/Section";
 
 export function Footer() {
   return (
-    <Section>
+    <Section className=" pb-5! md:pt-24  ">
       <footer id="footer">
-        <div className="wrap">
-          <div className="footer-intro">
+        <div className=" md:px-8">
+          <div className="grid gap-12 border-b border-[#d9d9d0] pb-16 md:grid-cols-[0.85fr_1.15fr] md:gap-16">
             <FooterBrandBlock />
             <FooterNote />
           </div>
           <FooterLinks />
           <div
-            className=" text-center text-[100px] bg-clip-text text-transparent  bg-linear-to-r from-green-900 to bg-gray-300 
-          tracking-wide font-serif font-semibold border-t border-[#d9e0d6] py-5 text-b text-shadow-xs"
+            className="bg-linear-to-r from-moss-deep to-gray-300 bg-clip-text py-6 text-center font-serif text-[70px] font-semibold tracking-wide text-transparent text-shadow-xs md:text-[100px]"
             aria-hidden="true"
           >
             Novi

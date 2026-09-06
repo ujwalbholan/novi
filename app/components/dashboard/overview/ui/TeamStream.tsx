@@ -14,13 +14,13 @@ export function TeamStream() {
           <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#93a092]">
             Team stream
           </p>
-          <h3 className="mt-1 font-serif text-xl text-[#213328]">
+          <h3 className="mt-1 font-serif text-xl text-moss-deep">
             Recent activity
           </h3>
         </div>
         <button
           type="button"
-          className="grid size-8 place-items-center rounded-lg bg-[#eef3ec] text-[#2e4a3b] transition hover:bg-[#dce9dc]"
+          className="grid size-8 place-items-center rounded-lg bg-[#eef3ec] text-moss transition hover:bg-[#dce9dc]"
           aria-label="Add update"
         >
           <Plus size={15} />
@@ -47,7 +47,7 @@ export function TeamStream() {
                   {item.name}
                 </strong>{" "}
                 {item.action}{" "}
-                <span className="font-medium text-[#2e4a3b]">{item.task}</span>
+                <span className="font-medium text-moss">{item.task}</span>
               </p>
               <p className="mt-0.5 flex items-center gap-1 text-[10px] text-[#a0aca1]">
                 <Clock3 size={11} /> {item.time}

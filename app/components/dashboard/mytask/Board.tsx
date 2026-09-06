@@ -7,6 +7,7 @@ import {
   useDroppable,
 } from "@dnd-kit/core";
 import { CSS } from "@dnd-kit/utilities";
+import { cn } from "@/app/util/utils";
 import {
   ArrowLeft,
   ArrowRight,
@@ -46,7 +47,10 @@ function CardItem({
     <motion.div
       ref={setNodeRef}
       style={{ transform: CSS.Translate.toString(transform) }}
-      className={`demo-card ${isDragging ? "dragging" : ""}`}
+      className={cn(
+        "group flex cursor-grab items-start justify-between gap-1.5 rounded-lg border border-line bg-card p-2.5 text-[0.78rem] transition-[border-color,box-shadow] hover:border-[#bfc9bc] hover:shadow-[0_5px_12px_rgba(30,51,39,0.08)]",
+        isDragging && "opacity-35",
+      )}
       layout
       initial={{ opacity: 0, x: 18, scale: 0.96 }}
       animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -55,15 +59,24 @@ function CardItem({
       {...attributes}
     >
       <div>
-        <span className={`tag ${card.gold ? "gold" : ""}`}>{card.tag}</span>
+        <span
+          className={cn(
+            "mb-1.5 inline-block rounded-md px-1.5 py-0.5 text-[0.62rem] font-semibold",
+            card.gold
+              ? "bg-[#f3e2c2] text-[#7a5518]"
+              : "bg-moss-tint text-moss-deep",
+          )}
+        >
+          {card.tag}
+        </span>
         <br />
         {card.title}
       </div>
-      <span className="card-move-actions">
+      <span className="flex shrink-0 gap-0.5">
         {canRetreat && (
           <motion.button
             type="button"
-            className="card-arrow"
+            className="grid size-5.5 shrink-0 place-items-center rounded-md bg-moss-tint text-moss opacity-0 transition-[opacity,background-color] group-hover:opacity-100 group-focus-within:opacity-100 hover:bg-gold-soft"
             onPointerDown={(event) => event.stopPropagation()}
             onClick={onRetreat}
             whileHover={{ x: -3 }}
@@ -76,7 +89,7 @@ function CardItem({
         {canAdvance && (
           <motion.button
             type="button"
-            className="card-arrow"
+            className="grid size-5.5 shrink-0 place-items-center rounded-md bg-moss-tint text-moss opacity-0 transition-[opacity,background-color] group-hover:opacity-100 group-focus-within:opacity-100 hover:bg-gold-soft"
             onPointerDown={(event) => event.stopPropagation()}
             onClick={onAdvance}
             whileHover={{ x: 3 }}
@@ -104,6 +117,9 @@ type ColumnProps = Pick<Column, "id" | "title" | "cards"> & {
   canAdvance: boolean;
 };
 
+const columnBaseClass =
+  "flex min-h-[220px] w-[min(240px,calc((100vw-100px)/3))] min-w-[210px] flex-[1_0_210px] flex-col gap-2 rounded-xl bg-bg-deep p-2.5";
+
 function Column({
   id,
   title,
@@ -123,21 +139,25 @@ function Column({
   return (
     <div
       ref={setNodeRef}
-      className={`demo-col group ${isOver ? "drop-hover" : ""}`}
+      className={cn(
+        columnBaseClass,
+        "group",
+        isOver && "outline-2 outline-dashed outline-moss outline-offset-[-4px]",
+      )}
     >
-      <h4>
-        <span className="column-title">{title}</span>
-        <span className="column-count">{cards.length}</span>
+      <h4 className="mx-1 my-0.5 flex items-center justify-between text-[0.72rem] font-semibold text-ink-soft">
+        <span className="flex-1 truncate font-semibold">{title}</span>
+        <span className="ml-1 shrink-0 font-normal">{cards.length}</span>
         <button
           type="button"
-          className="column-add-task"
+          className="ml-1 grid size-5.5 shrink-0 place-items-center rounded-md border-0 bg-transparent text-ink-soft opacity-0 transition-[opacity,background-color,color] group-hover:opacity-100 group-focus-within:opacity-100 hover:bg-moss-tint hover:text-moss"
           onClick={onStartAdd}
           aria-label={`Add task to ${title}`}
         >
           <Plus size={14} />
         </button>
       </h4>
-      <div className="column-cards">
+      <div className="flex max-h-[220px] flex-col gap-2 overflow-y-auto pr-1 overscroll-contain [scrollbar-color:#b9cbb9_transparent] [scrollbar-width:thin]">
         {cards.map((card) => (
           <CardItem
             key={card.id}
@@ -150,19 +170,21 @@ function Column({
         ))}
       </div>
       {addingTask && (
-        <form className="add-task-form" onSubmit={onAddTask}>
+        <form className="flex flex-col gap-1.5 rounded-md border border-[#b7c8b7] bg-[#f8faf6] p-1.5" onSubmit={onAddTask}>
           <input
             autoFocus
             value={taskTitle}
             onChange={(event) => onTaskTitleChange(event.target.value)}
             placeholder="Task name..."
             aria-label={`New task in ${title}`}
+            className="w-full rounded-sm border border-line bg-white px-1.5 py-1.5 text-[0.7rem] text-ink outline-none focus:border-moss"
           />
-          <div>
+          <div className="flex gap-1">
             <button
               type="submit"
               disabled={!taskTitle.trim()}
               aria-label="Save task"
+              className="grid min-h-[23px] flex-1 place-items-center rounded-sm border-0 bg-moss text-white disabled:cursor-not-allowed disabled:opacity-45"
             >
               <Check size={13} />
             </button>
@@ -170,6 +192,7 @@ function Column({
               type="button"
               onClick={onCancelAdd}
               aria-label="Cancel task"
+              className="grid min-h-[23px] flex-1 place-items-center rounded-sm border-0 bg-line text-ink-soft"
             >
               <X size={13} />
             </button>
@@ -311,19 +334,21 @@ export default function BoardDemo() {
 
   return (
     <div aria-label="Interactive preview of a Novi board">
-      <div className="demo-top">
-        <span className="demo-title">Task Board</span>
+      <div className="mb-4 flex items-center justify-between">
+        <span className="text-[0.8rem] font-medium text-ink-soft">
+          Task Board
+        </span>
         <button
           type="button"
           onClick={() => setIsAddingColumn(true)}
-          className="board-add-column"
+          className="inline-flex items-center gap-1 rounded-md border-0 bg-moss-tint px-2.5 py-1.5 text-[0.7rem] font-semibold text-moss transition-[background,transform] hover:translate-y-[-1px] hover:bg-gold-soft"
           aria-label="Add board column"
         >
           <Plus size={14} /> Add column
         </button>
       </div>
       <DndContext onDragEnd={handleDragEnd}>
-        <div className="demo-cols">
+        <div className="flex max-h-[285px] max-w-full gap-3 overflow-x-auto overflow-y-hidden px-0.5 pb-2.5 [scrollbar-color:var(--line)_transparent] [scrollbar-width:thin]">
           {columns.map((column) => (
             <Column
               key={column.id}
@@ -344,13 +369,20 @@ export default function BoardDemo() {
             />
           ))}
           {isAddingColumn && (
-            <form className="demo-col add-column-form" onSubmit={addColumn}>
-              <div className="add-column-heading">
+            <form
+              className={cn(
+                columnBaseClass,
+                "items-stretch justify-start border border-dashed border-[#b7c8b7] bg-[#f8faf6]",
+              )}
+              onSubmit={addColumn}
+            >
+              <div className="flex items-center justify-between text-[0.72rem] font-semibold text-moss">
                 <span>New column</span>
                 <button
                   type="button"
                   onClick={() => setIsAddingColumn(false)}
                   aria-label="Cancel adding column"
+                  className="grid place-items-center border-0 bg-transparent text-ink-soft"
                 >
                   <X size={14} />
                 </button>
@@ -361,70 +393,81 @@ export default function BoardDemo() {
                 onChange={(event) => setColumnName(event.target.value)}
                 placeholder="e.g. In review"
                 aria-label="New column name"
+                className="w-full rounded-md border border-line bg-white px-2 py-1.5 text-[0.72rem] text-ink outline-none focus:border-moss"
               />
-              <button type="submit" disabled={!columnName.trim()}>
+              <button
+                type="submit"
+                disabled={!columnName.trim()}
+                className="inline-flex items-center justify-center gap-1 rounded-md border-0 bg-moss px-2 py-1.5 text-[0.7rem] font-semibold text-white disabled:cursor-not-allowed disabled:opacity-45"
+              >
                 <Check size={14} /> Create column
               </button>
             </form>
           )}
         </div>
       </DndContext>
-      <p className="demo-hint">
+      <p className="mt-3.5 text-center text-[0.72rem] text-ink-soft">
         Drag a card between columns to move the work forward
       </p>
       <motion.div
-        className="board-insights"
+        className="mt-4 flex items-stretch overflow-hidden rounded-[10px] border border-line bg-line"
         initial="hidden"
         animate="visible"
         variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
       >
         <motion.div
-          className="board-insight insight-stat"
+          className="flex min-w-[108px] flex-col justify-center gap-0.5 border-r border-line bg-[#fbfcf9] p-3"
           variants={{
             hidden: { opacity: 0, y: 8 },
             visible: { opacity: 1, y: 0 },
           }}
         >
-          <span className="insight-icon gold">
+          <span className="mb-0.5 grid size-6 place-items-center rounded-md bg-[#f5e6c7] text-gold">
             <ListChecks size={15} />
           </span>
-          <span className="board-insight-value">{totalTasks}</span>
-          <span className="board-insight-label">tasks in flight</span>
+          <span className="font-serif text-xl leading-none text-moss">
+            {totalTasks}
+          </span>
+          <span className="text-[0.62rem] text-ink-soft">tasks in flight</span>
         </motion.div>
         <motion.div
-          className="board-insight insight-stat"
+          className="flex min-w-[108px] flex-col justify-center gap-0.5 border-r border-line bg-[#fbfcf9] p-3"
           variants={{
             hidden: { opacity: 0, y: 8 },
             visible: { opacity: 1, y: 0 },
           }}
         >
-          <span className="insight-icon sage">
+          <span className="mb-0.5 grid size-6 place-items-center rounded-md bg-moss-tint text-moss">
             <Zap size={15} />
           </span>
-          <span className="board-insight-value">{activeTasks}</span>
-          <span className="board-insight-label">being worked on</span>
+          <span className="font-serif text-xl leading-none text-moss">
+            {activeTasks}
+          </span>
+          <span className="text-[0.62rem] text-ink-soft">being worked on</span>
         </motion.div>
         <motion.div
-          className="board-insight insight-stat"
+          className="flex min-w-[108px] flex-col justify-center gap-0.5 border-r border-line bg-[#fbfcf9] p-3"
           variants={{
             hidden: { opacity: 0, y: 8 },
             visible: { opacity: 1, y: 0 },
           }}
         >
-          <span className="insight-icon peach">
+          <span className="mb-0.5 grid size-6 place-items-center rounded-md bg-[#f4e0d8] text-[#bd7258]">
             <CheckCircle2 size={15} />
           </span>
-          <span className="board-insight-value">{completionRate}%</span>
-          <span className="board-insight-label">Task complete</span>
+          <span className="font-serif text-xl leading-none text-moss">
+            {completionRate}%
+          </span>
+          <span className="text-[0.62rem] text-ink-soft">Task complete</span>
         </motion.div>
         <motion.div
-          className="board-insight board-insight-tip"
+          className="flex min-w-0 flex-1 flex-col justify-center gap-1.5 bg-[#fbfcf9] p-3 text-[0.66rem] leading-[1.35] text-ink-soft"
           variants={{
             hidden: { opacity: 0, x: 10 },
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <span className="board-insight-kicker">
+          <span className="inline-flex items-center gap-1 text-[0.62rem] font-bold uppercase tracking-wide text-gold">
             <Sparkles size={12} /> Project pulse
           </span>
           <span>

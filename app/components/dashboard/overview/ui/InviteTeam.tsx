@@ -10,7 +10,7 @@ export function InviteTeam() {
       className="flex flex-col gap-4 rounded-xl border border-[#d9e0d6] bg-[#eef3ec] p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5"
     >
       <div className="flex items-center gap-3">
-        <span className="grid size-10 place-items-center rounded-xl bg-[#dce9dc] text-[#2e4a3b]">
+        <span className="grid size-10 place-items-center rounded-xl bg-[#dce9dc] text-moss">
           <Users size={18} />
         </span>
         <div>
@@ -24,7 +24,7 @@ export function InviteTeam() {
       </div>
       <button
         type="button"
-        className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#b9cbb9] bg-white px-3 py-2 text-xs font-semibold text-[#2e4a3b] transition hover:border-[#2e4a3b]"
+        className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#b9cbb9] bg-white px-3 py-2 text-xs font-semibold text-moss transition hover:border-[#2e4a3b]"
       >
         Invite teammate <Plus size={14} />
       </button>

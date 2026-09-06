@@ -161,7 +161,7 @@ export function Inbox({ activeChannel }: InboxProps) {
         <div className="flex min-w-0 flex-1 items-center gap-2">
           <Hash size={18} className="text-[#819082]" />
           <div className="min-w-0">
-            <h2 className="truncate text-sm font-semibold text-[#213328]">
+            <h2 className="truncate text-sm font-semibold text-moss-deep">
               {channel.name}
             </h2>
             <p className="truncate text-[10px] text-[#93a092]">
@@ -252,7 +252,7 @@ export function Inbox({ activeChannel }: InboxProps) {
               ))
             ) : (
               <div className="flex h-full min-h-48 flex-col items-center justify-center text-center">
-                <span className="mb-3 grid size-11 place-items-center rounded-full bg-[#eef3ec] text-[#2e4a3b]">
+                <span className="mb-3 grid size-11 place-items-center rounded-full bg-[#eef3ec] text-moss">
                   <Sparkles size={18} />
                 </span>
                 <p className="text-sm font-medium text-[#304638]">
@@ -299,7 +299,7 @@ export function Inbox({ activeChannel }: InboxProps) {
               <button
                 type="submit"
                 disabled={!draft.trim()}
-                className="grid size-8 shrink-0 place-items-center rounded-lg bg-[#2e4a3b] text-white transition hover:bg-[#1e3327] disabled:cursor-not-allowed disabled:opacity-40"
+                className="grid size-8 shrink-0 place-items-center rounded-lg bg-moss text-white transition hover:bg-moss-deep disabled:cursor-not-allowed disabled:opacity-40"
                 aria-label="Send message"
               >
                 <Send size={15} />
@@ -356,7 +356,7 @@ export function Inbox({ activeChannel }: InboxProps) {
                     </p>
                   </div>
                   <div className="flex gap-2">
-                    <span className="grid size-6 place-items-center rounded-full bg-[#c98a2e] text-[8px] font-bold text-white">
+                    <span className="grid size-6 place-items-center rounded-full bg-gold text-[8px] font-bold text-white">
                       AT
                     </span>
                     <p className="text-[11px] leading-5 text-[#536154]">
@@ -379,7 +379,7 @@ export function Inbox({ activeChannel }: InboxProps) {
                 />
                 <button
                   type="submit"
-                  className="grid size-8 shrink-0 place-items-center rounded-md bg-[#2e4a3b] text-white"
+                  className="grid size-8 shrink-0 place-items-center rounded-md bg-moss text-white"
                   aria-label="Send thread reply"
                 >
                   <Send size={13} />

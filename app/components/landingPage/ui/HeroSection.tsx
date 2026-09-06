@@ -7,10 +7,9 @@ export function HeroSection() {
     <Section>
       <div className="flex flex-col justify-center items-center">
         <Hero />
-        <div
-          className="hero-dashboard reveal"
-          style={{ animationDelay: "460ms" }}
-        >
+        <div className="mx-auto mt-14 hidden w-full max-w-[1080px] text-left opacity-0 translate-y-4
+         animate-[reveal-up_0.7s_cubic-bezier(0.2,0.7,0.2,1)_forwards] [animation-delay:460ms] md:block"
+         >
           <DashboardDemo />
         </div>
       </div>
