@@ -7,8 +7,8 @@ import { Tag } from "../../common/Tag";
 export default function Hero() {
   return (
     <>
-      <Tag title="Built for small, fast teams" />
-      <Heading title="Run your team without the tab switching." />
+      <Tag title="Built for small, fast teams" className="mb-5" />
+      <Heading title="Run your team without the tab switching."/>
       <Paragraph
         title="Novi brings tasks, docs, and conversations into one calm workspace
           built for small, fast moving teams."
