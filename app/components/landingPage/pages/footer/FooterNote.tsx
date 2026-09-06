@@ -28,8 +28,8 @@ export function FooterNote() {
           id="footer-email"
           type="email"
           required
-          placeholder="you@company.com"
-          className="min-w-0 flex-1 bg-transparent py-2 text-[0.82rem] text-ink outline-none placeholder:text-[#9aa49a]"
+          placeholder="novi@gmail.com"
+          className="min-w-0 flex-1 bg-transparent py-2 text-[0.82rem] text-ink outline-none! placeholder:text-[#9aa49a]"
         />
         <button
           type="submit"

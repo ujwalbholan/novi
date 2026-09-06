@@ -177,7 +177,7 @@ function Column({
             onChange={(event) => onTaskTitleChange(event.target.value)}
             placeholder="Task name..."
             aria-label={`New task in ${title}`}
-            className="w-full rounded-sm border border-line bg-white px-1.5 py-1.5 text-[0.7rem] text-ink outline-none focus:border-moss"
+            className="w-full rounded-sm outline-none! border border-line bg-white px-1.5 py-1.5 text-[0.7rem] text-ink outline-none focus:border-moss"
           />
           <div className="flex gap-1">
             <button
