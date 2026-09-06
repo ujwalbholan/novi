@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { activity, reveal, spring } from "../../constant";
-import { Clock3, Plus } from "lucide-react";
+import { Clock3 } from "lucide-react";
 
 export function TeamStream() {
   return (
