@@ -18,13 +18,6 @@ export function TeamStream() {
             Recent activity
           </h3>
         </div>
-        <button
-          type="button"
-          className="grid size-8 place-items-center rounded-lg bg-[#eef3ec] text-moss transition hover:bg-[#dce9dc]"
-          aria-label="Add update"
-        >
-          <Plus size={15} />
-        </button>
       </div>
       <div className="space-y-4">
         {activity.map((item) => (

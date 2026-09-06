@@ -20,7 +20,7 @@ export function DashboardMainPage({
   }[activeView as "Overview" | "My tasks" | "Inbox" | "Calendar"];
 
   return (
-    <main className="col-span-5 min-h-150 w-full bg-[#f8faf6] p-4 sm:p-6">
+    <main className="col-span-5 min-h-150 w-full rounded-br-xl bg-[#f8faf6] p-4 sm:p-6">
       {view ?? <Overview />}
     </main>
   );

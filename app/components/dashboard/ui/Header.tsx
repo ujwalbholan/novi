@@ -40,7 +40,7 @@ function Head() {
           <span>Overview</span>
         </div>
         <h2 className="mt-1 truncate font-serif text-lg font-medium tracking-tight text-moss-deep sm:text-xl">
-          Good morning, Alex.
+          Good morning, Ujwal.
         </h2>
       </div>
 
@@ -51,7 +51,7 @@ function Head() {
             className="pointer-events-none absolute left-3 text-[#93a092]"
           />
           <input
-            className="h-9 w-full rounded-lg border border-[#d9e0d6] bg-white pl-9 pr-12 text-xs text-moss-deep outline-none placeholder:text-[#a2ada1] focus:border-[#8fa996] focus:ring-2 focus:ring-[#dce9dc]"
+            className="h-9 w-full rounded-lg outline-none! border border-[#d9e0d6] bg-white pl-9 pr-12 text-xs text-moss-deep placeholder:text-[#a2ada1] focus:border-[#8fa996] focus:ring-2 focus:ring-[#dce9dc]"
             type="search"
             placeholder="Search anything"
             aria-label="Search anything"
@@ -81,7 +81,7 @@ function Head() {
           aria-label="Open account menu"
         >
           <span className="grid size-6 place-items-center rounded-md bg-gold text-[9px] font-bold text-white">
-            AT
+            UB
           </span>
           <ChevronDown size={14} className="text-ink-soft/70" />
         </button>

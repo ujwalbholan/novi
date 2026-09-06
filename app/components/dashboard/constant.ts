@@ -88,24 +88,32 @@ export const projectsDetails = [
 
 export const activity = [
   {
-    initials: "ML",
-    name: "Maya Liu",
+    initials: "PB",
+    name: "Prasna Basnet",
     action: "completed",
     task: "Connect Stripe",
     time: "8 min ago",
     color: "#9bc7b0",
   },
   {
-    initials: "AT",
-    name: "Alex Taylor",
+    initials: "UB",
+    name: "Ujwal Bholan",
     action: "commented on",
     task: "Design empty states",
     time: "24 min ago",
     color: "#c98a2e",
   },
   {
-    initials: "JR",
-    name: "Jamie Ross",
+    initials: "JB",
+    name: "Jitendra Bholan",
+    action: "moved",
+    task: "Launch copy",
+    time: "1 hr ago",
+    color: "#d79a82",
+  },
+    {
+    initials: "BB",
+    name: "Bijay Bholan",
     action: "moved",
     task: "Launch copy",
     time: "1 hr ago",

@@ -39,8 +39,8 @@ const initialChannels: Channel[] = [
     messages: [
       {
         id: 1,
-        name: "Maya Liu",
-        initials: "ML",
+        name: "Pransa Basnet",
+        initials: "PB",
         color: "#91bca4",
         text: "Good morning, team! The launch checklist is looking really solid. What is everyone focused on today?",
         time: "9:14 AM",
@@ -48,8 +48,8 @@ const initialChannels: Channel[] = [
       },
       {
         id: 2,
-        name: "Alex Taylor",
-        initials: "AT",
+        name: "Ujwal Bholan",
+        initials: "UB",
         color: "#c98a2e",
         text: "I am taking the final pass on onboarding and will share the updated flow before lunch.",
         time: "9:22 AM",
@@ -57,16 +57,16 @@ const initialChannels: Channel[] = [
       },
       {
         id: 3,
-        name: "Jamie Ross",
-        initials: "JR",
+        name: "Jitendra Bholan",
+        initials: "JB",
         color: "#d79a82",
         text: "I have the launch copy ready for review. Dropping it in the project thread now.",
         time: "9:36 AM",
       },
       {
         id: 4,
-        name: "Maya Liu",
-        initials: "ML",
+        name: "Bijay Bholan",
+        initials: "BB",
         color: "#91bca4",
         text: "Perfect. Let us keep all feedback attached to the work so nothing gets lost in the scroll.",
         time: "9:41 AM",
@@ -80,8 +80,8 @@ const initialChannels: Channel[] = [
     messages: [
       {
         id: 5,
-        name: "Alex Taylor",
-        initials: "AT",
+        name: "Ujwal Bholan",
+        initials: "UB",
         color: "#c98a2e",
         text: "The first beta invites are out. We have three replies already.",
         time: "Yesterday",
@@ -95,8 +95,8 @@ const initialChannels: Channel[] = [
     messages: [
       {
         id: 6,
-        name: "Jamie Ross",
-        initials: "JR",
+        name: "Prasna Basnet",
+        initials: "PB",
         color: "#d79a82",
         text: "The empty states are ready for a team review when you have a moment.",
         time: "Yesterday",
@@ -133,8 +133,8 @@ export function Inbox({ activeChannel }: InboxProps) {
     if (!text) return;
     const newMessage: Message = {
       id: Date.now(),
-      name: "Alex Taylor",
-      initials: "AT",
+      name: "Ujwal Bholan",
+      initials: "UB",
       color: "#c98a2e",
       text,
       time: "now",
@@ -178,7 +178,7 @@ export function Inbox({ activeChannel }: InboxProps) {
           <input
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            className="h-9 w-full rounded-lg border border-[#d9e0d6] bg-[#f8faf6] pl-9 pr-3 text-xs outline-none placeholder:text-[#a0aca1] focus:border-[#8fa996]"
+            className="h-9 w-full rounded-lg outline-none! border border-[#d9e0d6] bg-[#f8faf6] pl-9 pr-3 text-xs outline-none placeholder:text-[#a0aca1] focus:border-[#8fa996]"
             placeholder="Search channel"
             aria-label="Search channel"
           />
@@ -286,7 +286,7 @@ export function Inbox({ activeChannel }: InboxProps) {
                   }
                 }}
                 rows={1}
-                className="max-h-24 min-h-8 flex-1 resize-none bg-transparent px-1 py-1 text-xs text-[#304638] outline-none placeholder:text-[#a0aca1]"
+                className="max-h-24 min-h-8 flex-1 resize-none bg-transparent px-1 py-1 text-xs text-[#304638] outline-none! placeholder:text-[#a0aca1]"
                 placeholder={`Message #${channel.name}`}
               />
               <button
@@ -347,20 +347,20 @@ export function Inbox({ activeChannel }: InboxProps) {
                 <div className="mt-4 space-y-4 h-80">
                   <div className="flex gap-2">
                     <span className="grid size-6 place-items-center rounded-full bg-[#91bca4] text-[8px] font-bold text-white">
-                      ML
+                      PB
                     </span>
                     <p className="text-[11px] leading-5 text-[#536154]">
-                      <strong className="text-[#304638]">Maya</strong>
+                      <strong className="text-[#304638]">Prasna</strong>
                       <br />
                       Love this direction. I will take a look shortly.
                     </p>
                   </div>
                   <div className="flex gap-2">
                     <span className="grid size-6 place-items-center rounded-full bg-gold text-[8px] font-bold text-white">
-                      AT
+                      UB
                     </span>
                     <p className="text-[11px] leading-5 text-[#536154]">
-                      <strong className="text-[#304638]">Alex</strong>
+                      <strong className="text-[#304638]">Ujwal</strong>
                       <br />
                       Thanks, adding it to the launch notes.
                     </p>
@@ -374,12 +374,12 @@ export function Inbox({ activeChannel }: InboxProps) {
                 <input
                   value={threadDraft}
                   onChange={(event) => setThreadDraft(event.target.value)}
-                  className="min-w-0 flex-1 rounded-md border border-[#d9e0d6] bg-white px-2 py-2 text-[11px] "
+                  className="min-w-0 flex-1 rounded-md outline-none! border border-[#d9e0d6] bg-white px-2 py-2 text-[11px] "
                   placeholder="Reply..."
                 />
                 <button
                   type="submit"
-                  className="grid size-8 shrink-0 place-items-center rounded-md bg-moss text-white"
+                  className="grid size-8 shrink-0 place-items-center rounded-md  bg-moss text-white"
                   aria-label="Send thread reply"
                 >
                   <Send size={13} />

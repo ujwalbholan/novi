@@ -23,67 +23,84 @@ export function Sidebar({
         <p className="px-3 pb-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#93a092]">
           Workspace
         </p>
-        {primaryLinks.map(({ label, icon: Icon, badge, children, createChannel }) => (
-          <div key={label}>
-            <button
-              type="button"
-              onClick={() => onViewChange(label)}
-              className={`flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left text-xs font-medium transition ${activeView === label ? "bg-[#dce9dc] text-moss-deep" : "hover:bg-white hover:text-moss-deep"}`}
-            >
-              <Icon size={16} strokeWidth={activeView === label ? 2.2 : 1.8} />
-              <span className="flex-1">{label}</span>
-              {badge && (
-                <span className="rounded-full bg-gold px-1.5 py-0.5 text-[10px] font-semibold text-white">
-                  {badge}
-                </span>
-              )}
-            </button>
-            <AnimatePresence initial={false}>
-              {activeView === label && children && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.22, ease: "easeOut" }}
-                  className="ml-2 mt-1 overflow-hidden border-l border-[#cbdacb] pl-2"
-                >
+        {primaryLinks.map(
+          ({ label, icon: Icon, badge, children, createChannel }) => (
+            <div key={label}>
+              <button
+                type="button"
+                onClick={() => onViewChange(label)}
+                className={`flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left text-xs font-medium transition ${activeView === label ? "bg-[#dce9dc] text-moss-deep" : "hover:bg-white hover:text-moss-deep"}`}
+              >
+                <Icon
+                  size={16}
+                  strokeWidth={activeView === label ? 2.2 : 1.8}
+                />
+                <span className="flex-1">{label}</span>
+                {badge && (
+                  <span className="rounded-full bg-gold px-1.5 py-0.5 text-[10px] font-semibold text-white">
+                    {badge}
+                  </span>
+                )}
+              </button>
+              <AnimatePresence initial={false}>
+                {activeView === label && children && (
                   <motion.div
-                    initial="hidden"
-                    animate="visible"
-                    variants={{ visible: { transition: { staggerChildren: 0.055 } } }}
-                    className="max-h-[132px] space-y-1 overflow-y-auto overscroll-contain py-1 [scrollbar-color:#b9cbb9_transparent] [scrollbar-width:thin] [&::-webkit-scrollbar]:w-[5px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-[#b9cbb9]"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.22, ease: "easeOut" }}
+                    className="ml-2 mt-1 overflow-hidden border-l border-[#cbdacb] pl-2"
                   >
-                    {children.map((child) => (
-                      <motion.button
-                        key={child.label}
-                        type="button"
-                        onClick={() => onChannelChange(child.label)}
-                        variants={{ hidden: { opacity: 0, x: -8 }, visible: { opacity: 1, x: 0 } }}
-                        transition={{ duration: 0.18 }}
-                        className={`flex w-full items-center gap-2 rounded-md px-2 py-2 text-left text-[11px] transition ${activeChannel === child.label ? "bg-[#dce9dc] font-semibold text-moss-deep" : "text-ink-soft hover:bg-white hover:text-moss-deep"}`}
-                      >
-                        <span className="text-[#93a092]">#</span>
-                        <span className="flex-1 truncate">{child.label}</span>
-                        {child.badge && <span className="rounded-full bg-gold px-1.5 text-[10px] font-semibold text-white">{child.badge}</span>}
-                      </motion.button>
-                    ))}
-                    {createChannel && (
-                      <motion.button
-                        type="button"
-                        onClick={() => onViewChange("Inbox")}
-                        variants={{ hidden: { opacity: 0, x: -8 }, visible: { opacity: 1, x: 0 } }}
-                        transition={{ duration: 0.18 }}
-                        className="flex w-full items-center gap-2 rounded-md px-2 py-2 text-left text-[11px] text-ink-soft/70 transition hover:bg-white hover:text-moss-deep"
-                      >
-                        <Plus size={13} /> Create channel
-                      </motion.button>
-                    )}
+                    <motion.div
+                      initial="hidden"
+                      animate="visible"
+                      variants={{
+                        visible: { transition: { staggerChildren: 0.055 } },
+                      }}
+                      className="max-h-[132px] space-y-1 overflow-y-auto overscroll-contain py-1 [scrollbar-color:#b9cbb9_transparent] [scrollbar-width:thin] [&::-webkit-scrollbar]:w-[5px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-[#b9cbb9]"
+                    >
+                      {children.map((child) => (
+                        <motion.button
+                          key={child.label}
+                          type="button"
+                          onClick={() => onChannelChange(child.label)}
+                          variants={{
+                            hidden: { opacity: 0, x: -8 },
+                            visible: { opacity: 1, x: 0 },
+                          }}
+                          transition={{ duration: 0.18 }}
+                          className={`flex w-full items-center gap-2 rounded-md px-2 py-2 text-left text-[11px] transition ${activeChannel === child.label ? "bg-[#dce9dc] font-semibold text-moss-deep" : "text-ink-soft hover:bg-white hover:text-moss-deep"}`}
+                        >
+                          <span className="text-[#93a092]">#</span>
+                          <span className="flex-1 truncate">{child.label}</span>
+                          {child.badge && (
+                            <span className="rounded-full bg-gold px-1.5 text-[10px] font-semibold text-white">
+                              {child.badge}
+                            </span>
+                          )}
+                        </motion.button>
+                      ))}
+                      {createChannel && (
+                        <motion.button
+                          type="button"
+                          onClick={() => onViewChange("Inbox")}
+                          variants={{
+                            hidden: { opacity: 0, x: -8 },
+                            visible: { opacity: 1, x: 0 },
+                          }}
+                          transition={{ duration: 0.18 }}
+                          className="flex w-full items-center gap-2 rounded-md px-2 py-2 text-left text-[11px] text-ink-soft/70 transition hover:bg-white hover:text-moss-deep"
+                        >
+                          <Plus size={13} /> Create channel
+                        </motion.button>
+                      )}
+                    </motion.div>
                   </motion.div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        ))}
+                )}
+              </AnimatePresence>
+            </div>
+          ),
+        )}
       </nav>
 
       <div className="mt-7">
@@ -134,14 +151,14 @@ export function Sidebar({
         </a>
         <div className="mt-3 flex items-center gap-2 rounded-lg bg-[#e3ece1] px-2.5 py-2">
           <span className="grid size-7 place-items-center rounded-full bg-gold text-[10px] font-bold text-white">
-            AT
+            UB
           </span>
           <div className="min-w-0 flex-1">
             <p className="truncate text-xs font-semibold text-moss-deep">
-              Alex Taylor
+              Ujwal Bholan
             </p>
             <p className="truncate text-[10px] text-ink-soft/70">
-              alex@novi.team
+              ujwal@novi.team
             </p>
           </div>
           <Sparkles size={14} className="text-gold" />
