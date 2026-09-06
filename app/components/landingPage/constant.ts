@@ -96,3 +96,5 @@ export const plans = [
     ],
   },
 ];
+
+export const links = ["Features", "Pricing", "Docs", "Blog"];

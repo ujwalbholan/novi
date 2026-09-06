@@ -9,7 +9,7 @@ export function FooterNote() {
     event.currentTarget.reset();
   };
   return (
-    <div className="grid gap-6 rounded-2xl border border-[#d7d8d0] bg-[#f8f8f4] p-7 shadow-[0_12px_28px_rgba(28,32,25,0.04)] md:grid-cols-[0.9fr_1.1fr] md:items-end md:gap-7">
+    <div className="grid gap-5 rounded-2xl border border-[#d7d8d0] bg-[#f8f8f4] p-6 shadow-[0_12px_28px_rgba(28,32,25,0.04)] sm:p-7 lg:grid-cols-[0.9fr_1.1fr] lg:items-end lg:gap-7">
       <div>
         <span className="text-[0.68rem] font-bold uppercase tracking-[0.12em] text-gold">
           The Novi note
@@ -20,7 +20,10 @@ export function FooterNote() {
           <em className="font-normal not-italic text-moss">No noise.</em>
         </h2>
       </div>
-      <form onSubmit={handleSubmit} className="flex items-center gap-2 border-b border-[#bfc8bc]">
+      <form
+        onSubmit={handleSubmit}
+        className="flex items-center gap-2 border-b border-[#bfc8bc] lg:min-w-0"
+      >
         <label htmlFor="footer-email" className="sr-only">
           Email address
         </label>
@@ -39,7 +42,10 @@ export function FooterNote() {
           <ArrowUpRight size={17} />
         </button>
       </form>
-      <p className="text-[0.7rem] text-ink-soft md:col-start-2 md:-mt-4" role="status">
+      <p
+        className="text-[0.7rem] text-ink-soft lg:col-start-2 lg:-mt-4"
+        role="status"
+      >
         {submitted
           ? "You are on the list. See you in your inbox."
           : "One short email a month. New features, useful ideas."}
