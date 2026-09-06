@@ -19,8 +19,14 @@ export function Heading({ title, delay = 0.1, className }: HeadingProps) {
         ease: [0.22, 1, 0.36, 1],
       }}
       className={cn(
-        "text-7xl text-center font-bold tracking-tight leading-tight max-w-200 bg-clip-text text-transparent bg-linear-to-b from-moss to-moss-tint text-shadow-xs",
-         className)}
+        "text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl",
+        "text-center font-bold tracking-tight leading-tight",
+        "max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-200",
+        "bg-clip-text text-transparent",
+        "bg-linear-to-b from-moss to-moss-tint",
+        "text-shadow-xs",
+        className,
+      )}
     >
       {title}
     </motion.h1>
