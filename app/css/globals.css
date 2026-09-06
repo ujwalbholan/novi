@@ -95,3 +95,10 @@ input {
     transition-duration: 0.01ms !important;
   }
 }
+
+.priceButton > span{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5;
+}

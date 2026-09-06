@@ -45,3 +45,54 @@ export const linkColumns = [
   { title: "Company", links: ["About Novi", "Journal", "Contact"] },
   { title: "Resources", links: ["Help center", "Community", "Changelog"] },
 ];
+
+export type Billing = "monthly" | "yearly";
+
+export const plans = [
+  {
+    name: "Starter",
+    tagline: "For small teams finding their rhythm.",
+    price: { monthly: 0, yearly: 0 },
+    cta: "Start free",
+    href: "#footer",
+    popular: false,
+    features: [
+      "Up to 5 members",
+      "3 active boards",
+      "Unlimited threads & comments",
+      "Shared team timeline",
+      "2 integrations",
+    ],
+  },
+  {
+    name: "Plus",
+    tagline: "For growing teams that ship every week.",
+    price: { monthly: 8, yearly: 6 },
+    cta: "Start free trial",
+    href: "#footer",
+    popular: true,
+    features: [
+      "Unlimited boards & members",
+      "Advanced timeline & milestones",
+      "Unlimited integrations",
+      "Custom views & filters",
+      "Import from Trello, Asana & CSV",
+      "Priority support",
+    ],
+  },
+  {
+    name: "Business",
+    tagline: "For teams that need control at scale.",
+    price: { monthly: 16, yearly: 13 },
+    cta: "Contact sales",
+    href: "#",
+    popular: false,
+    features: [
+      "Everything in Plus",
+      "SSO & SAML login",
+      "Audit logs & custom roles",
+      "API access & webhooks",
+      "Dedicated success manager",
+    ],
+  },
+];
